@@ -24,11 +24,10 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        binding=ActivityMainBinding.inflate(getLayoutInflater());
-        viewModel=new ViewModelProvider(this).get(MainViewModel.class);
         super.onCreate(savedInstanceState);
+        binding=ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        viewModel.traerLibros();
+        viewModel=new ViewModelProvider(this).get(MainViewModel.class);
         viewModel.getMutableMensaje().observe(this,mensage->{
             binding.tVNoEncontrado.setText(mensage);
         });
@@ -37,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
             intent.putExtra("libroSeleccionado",libro);
             startActivity(intent);
         });
+        viewModel.traerLibros();
         binding.btnBuscar.setOnClickListener(new View.OnClickListener(){
 
             @Override

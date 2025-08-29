@@ -23,6 +23,12 @@ public class LibroEncontradoActivity extends AppCompatActivity {
         viewModel = new ViewModelProvider(this).get(LibroEncontradoViewModel.class);
         super.onCreate(savedInstanceState);
         setContentView(binding.getRoot());
-
+        viewModel.getmutableLibroEncontrado().observe(this,libro->{
+            binding.tVTitulo.setText("Titulo:"+libro.getTitulo());
+            binding.tVAutor.setText("Autor :"+libro.getAutor());
+            binding.tVPaginas.setText("Cantidad de paginas"+String.valueOf(libro.getPaginas()));
+            binding.tVresenia.setText("Breve reseña : "+libro.getResenia());
+        });
+        viewModel.cargarLibro(getIntent());
     }
 }

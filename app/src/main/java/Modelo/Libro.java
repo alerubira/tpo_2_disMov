@@ -6,16 +6,16 @@ public class Libro implements Serializable {
     private String titulo;
     private String autor;
     private int paginas;
-    private String resnia;
+    private String resenia;
 
     public Libro() {
     }
 
-    public Libro(String titulo, String autor, int paginas, String resña) {
+    public Libro(String titulo, String autor, int paginas, String resenia) {
         this.titulo = titulo;
         this.autor = autor;
         this.paginas = paginas;
-        this.resnia = resnia;
+        this.resenia = resenia;
     }
 
     public String getTitulo() {
@@ -42,11 +42,11 @@ public class Libro implements Serializable {
         this.paginas = paginas;
     }
 
-    public String getResnia() {
-        return resnia;
+    public String getResenia() {
+        return resenia;
     }
 
-    public void setResnia(String resnia) {
-        this.resnia = resnia;
+    public void setResenia(String resenia) {
+        this.resenia = resenia;
     }
 }
